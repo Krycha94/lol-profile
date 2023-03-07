@@ -1,0 +1,60 @@
+@use "./variables" as v;
+@use "./mixins" as m;
+@use "./breakpoints" as b;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: v.$color-bg;
+	color: v.$color-font;
+	font-family: v.$font;
+	line-height: 1.5;
+	min-height: 100vh;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+ul {
+	list-style-type: none;
+}
+
+button {
+	font: inherit;
+	border: none;
+	cursor: pointer;
+}

@@ -1,0 +1,76 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+@use "../../styles/breakpoints" as b;
+
+.header {
+	padding: 1rem 2rem;
+	z-index: 10;
+	background-color: v.$color-bg;
+	border-bottom: 2px solid v.$color-gray-light;
+
+	&__center {
+		@include m.container;
+		@include b.breakpoint(md) {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	h1 {
+		font-size: 1.5rem;
+	}
+
+	&__hamburger {
+		font-size: 1.5rem;
+		background: transparent;
+		color: inherit;
+		transition: v.$transition;
+		@include b.breakpoint(md) {
+			display: none;
+		}
+
+		&:hover {
+			transform: rotate(90deg);
+		}
+	}
+
+	&__linksContainer {
+		height: 0;
+		overflow: hidden;
+		transition: v.$transition;
+		@include b.breakpoint(md) {
+			height: auto !important;
+		}
+	}
+
+	&__links {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 3rem;
+		padding: 3rem;
+		font-size: 1.5rem;
+		text-transform: capitalize;
+		@include b.breakpoint(md) {
+			flex-direction: row;
+			font-size: 1.2rem;
+			padding: 0rem;
+		}
+
+		a {
+			transition: v.$transition;
+			&:hover,
+			&:active,
+			&:focus {
+				color: v.$color-victory-light;
+			}
+		}
+	}
+}

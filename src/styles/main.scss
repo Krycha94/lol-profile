@@ -49,6 +49,11 @@ a {
 	color: inherit;
 }
 
+//react-router-navLinks
+a.active {
+	color: v.$color-victory-light;
+}
+
 ul {
 	list-style-type: none;
 }

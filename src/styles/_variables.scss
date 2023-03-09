@@ -1,12 +1,15 @@
 //colors
-$color-font: hsl(0, 0%, 100%);
-$color-bg: hsl(240, 3%, 11%);
-$color-gray-light: hsl(240, 9%, 21%);
-$color-gray-darker: hsl(240, 9%, 17%);
-$color-victory-light: hsl(221, 77%, 62%);
-$color-victory-dark: hsl(221, 32%, 23%);
-$color-defeat-light: hsl(352, 79%, 58%);
-$color-defeat-dark: hsl(349, 26%, 28%);
+$color-font: #ffffff;
+$color-bg: #1b1b1d;
+$color-gray-light: #31313a;
+$color-gray-darker: #27272f;
+$color-victory-light: #5383e9;
+$color-victory-dark: #28344d;
+$color-defeat-light: #e93f56;
+$color-defeat-dark: #5a353c;
 
 //fonts
 $font: "Inter", sans-serif;
+
+//transition
+$transition: 0.3s all ease-in-out;

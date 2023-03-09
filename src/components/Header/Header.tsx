@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
-import navLinks from "../../utils/nav-links";
+import { navLinks } from "../../utils/constants";
 import styles from "./Header.module.scss";
 
 const Header = () => {

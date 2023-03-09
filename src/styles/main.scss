@@ -63,3 +63,7 @@ button {
 	border: none;
 	cursor: pointer;
 }
+
+section {
+	@include m.container;
+}

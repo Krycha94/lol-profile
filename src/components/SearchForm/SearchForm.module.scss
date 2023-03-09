@@ -1,0 +1,59 @@
+@use "../../styles/variables" as v;
+@use "../../styles/breakpoints" as b;
+
+.section {
+	text-align: center;
+	margin-top: 10rem;
+	@include b.breakpoint(lg) {
+		margin-top: 16rem;
+	}
+
+	&__control {
+		margin: 3rem 0;
+	}
+
+	input,
+	select {
+		padding: 0.8rem;
+		border: none;
+		border-radius: 0.4rem;
+		background-color: v.$color-gray-light;
+		color: v.$color-font;
+		font-size: 1rem;
+		@include b.breakpoint(md) {
+			font-size: 1.2rem;
+			letter-spacing: 1px;
+		}
+	}
+
+	input {
+		margin-right: 0.7rem;
+		@include b.breakpoint(md) {
+			margin-right: 1rem;
+		}
+	}
+
+	select {
+		text-transform: uppercase;
+		padding: 0.95rem;
+		@include b.breakpoint(md) {
+			padding: 1rem;
+		}
+	}
+
+	button {
+		font-family: inherit;
+		background-color: v.$color-victory-light;
+		color: v.$color-font;
+		padding: 0.6rem 1.2rem;
+		border-radius: 0.4rem;
+		font-size: 1.2rem;
+		transition: v.$transition;
+
+		&:hover,
+		&:focus {
+			background-color: v.$color-font;
+			color: v.$color-bg;
+		}
+	}
+}

@@ -37,7 +37,7 @@
 		}
 
 		&:hover {
-			transform: rotate(90deg);
+			transform: rotate(180deg);
 		}
 	}
 
@@ -57,6 +57,7 @@
 		gap: 3rem;
 		padding: 3rem;
 		font-size: 1.5rem;
+		letter-spacing: 0.5px;
 		text-transform: capitalize;
 		@include b.breakpoint(md) {
 			flex-direction: row;

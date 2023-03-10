@@ -1,6 +1,10 @@
+import Summoner from "../components/Summoner/Summoner";
+
 const SummonerPage = () => {
-  return (
-    <div>SummonerPage</div>
-  )
-}
-export default SummonerPage
+	return (
+		<main>
+			<Summoner />
+		</main>
+	);
+};
+export default SummonerPage;

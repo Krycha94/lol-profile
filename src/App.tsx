@@ -15,7 +15,7 @@ function App() {
 			<Header />
 			<Routes>
 				<Route path="/" element={<HomePage />} />
-				<Route path="/summoner" element={<SummonerPage />} />
+				<Route path="/summoner/:region/:name" element={<SummonerPage />} />
 				<Route path="/leaderboards" element={<LeaderboardsPage />} />
 				<Route path="/free-rotation" element={<FreeRotationPage />} />
 				<Route path="/about" element={<AboutPage />} />

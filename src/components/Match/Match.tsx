@@ -22,70 +22,70 @@ const Match = () => {
 					<img src="http://unsplash.it/400/200" alt="" />
 					<img src="http://unsplash.it/400/200" alt="" />
 				</div>
-				{/* stats */}
-				<div className={styles.match__stats}>
-					<p>13 / 12 / 16</p>
-					<p>2.4 KDA</p>
-					<p>81 CS (3.9)</p>
-				</div>
-				{/* items */}
-				<div className={styles.match__items}>
-					<img src="http://unsplash.it/400/200" alt="" />
-					<img src="http://unsplash.it/400/200" alt="" />
-					<img src="http://unsplash.it/400/200" alt="" />
-					<img src="http://unsplash.it/400/200" alt="" />
-					<img src="http://unsplash.it/400/200" alt="" />
-					<img src="http://unsplash.it/400/200" alt="" />
-					<img src="http://unsplash.it/400/200" alt="" />
-					<img src="http://unsplash.it/400/200" alt="" />
-				</div>
-				{/* players */}
-				<div className={styles.match__players}>
-					{/* team 1 */}
-					<div className={styles.match__team}>
-						<div>
-							<img src="http://unsplash.it/400/200" alt="" />
-							<p>Lotarix</p>
-						</div>
-						<div>
-							<img src="http://unsplash.it/400/200" alt="" />
-							<p>Lotarix</p>
-						</div>
-						<div>
-							<img src="http://unsplash.it/400/200" alt="" />
-							<p>Lotarix</p>
-						</div>
-						<div>
-							<img src="http://unsplash.it/400/200" alt="" />
-							<p>Lotarix</p>
-						</div>
-						<div>
-							<img src="http://unsplash.it/400/200" alt="" />
-							<p>Lotarix</p>
-						</div>
+			</div>
+			{/* stats */}
+			<div className={styles.match__stats}>
+				<p>13 / 12 / 16</p>
+				<p>2.4 KDA</p>
+				<p>81 CS (3.9)</p>
+			</div>
+			{/* items */}
+			<div className={styles.match__items}>
+				<img src="http://unsplash.it/400/200" alt="" />
+				<img src="http://unsplash.it/400/200" alt="" />
+				<img src="http://unsplash.it/400/200" alt="" />
+				<img src="http://unsplash.it/400/200" alt="" />
+				<img src="http://unsplash.it/400/200" alt="" />
+				<img src="http://unsplash.it/400/200" alt="" />
+				<img src="http://unsplash.it/400/200" alt="" />
+				<img src="http://unsplash.it/400/200" alt="" />
+			</div>
+			{/* players */}
+			<div className={styles.match__players}>
+				{/* team 1 */}
+				<div className={styles.match__team}>
+					<div>
+						<img src="http://unsplash.it/400/200" alt="" />
+						<a>Lotarix</a>
 					</div>
-					{/* team 2 */}
-					<div className={styles.match__team}>
-						<div>
-							<img src="http://unsplash.it/400/200" alt="" />
-							<p>Lotarix</p>
-						</div>
-						<div>
-							<img src="http://unsplash.it/400/200" alt="" />
-							<p>Lotarix</p>
-						</div>
-						<div>
-							<img src="http://unsplash.it/400/200" alt="" />
-							<p>Lotarix</p>
-						</div>
-						<div>
-							<img src="http://unsplash.it/400/200" alt="" />
-							<p>Lotarix</p>
-						</div>
-						<div>
-							<img src="http://unsplash.it/400/200" alt="" />
-							<p>Lotarix</p>
-						</div>
+					<div>
+						<img src="http://unsplash.it/400/200" alt="" />
+						<a>Lotarix</a>
+					</div>
+					<div>
+						<img src="http://unsplash.it/400/200" alt="" />
+						<a>Lotarix Lotarix</a>
+					</div>
+					<div>
+						<img src="http://unsplash.it/400/200" alt="" />
+						<a>Lotarix</a>
+					</div>
+					<div>
+						<img src="http://unsplash.it/400/200" alt="" />
+						<a>Lotarix</a>
+					</div>
+				</div>
+				{/* team 2 */}
+				<div className={styles.match__team}>
+					<div>
+						<img src="http://unsplash.it/400/200" alt="" />
+						<a>Lotarix</a>
+					</div>
+					<div>
+						<img src="http://unsplash.it/400/200" alt="" />
+						<a>Lotarix</a>
+					</div>
+					<div>
+						<img src="http://unsplash.it/400/200" alt="" />
+						<a>Lotarix</a>
+					</div>
+					<div>
+						<img src="http://unsplash.it/400/200" alt="" />
+						<a>Lotarix Lotarix</a>
+					</div>
+					<div>
+						<img src="http://unsplash.it/400/200" alt="" />
+						<a>Lotarix</a>
 					</div>
 				</div>
 			</div>

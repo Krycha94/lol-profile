@@ -6,11 +6,136 @@
 	background-color: v.$color-defeat-dark;
 	border: 2px solid v.$color-defeat-light;
 	border-radius: 1rem;
-  padding: 0.5rem;
+	padding: 0.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1rem;
+	@include b.breakpoint(lg) {
+		padding: 1rem;
+	}
 
-  //pozniej to usunac
-  img {
-    width: 20px;
-    height: 20px;
-  }
+	&__info {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+
+		h3 {
+			font-size: 0.9rem;
+		}
+
+		p {
+			font-size: 0.8rem;
+		}
+	}
+
+	&__champion {
+		display: flex;
+		align-items: center;
+		gap: 0.8rem;
+	}
+
+	&__championImage {
+		position: relative;
+		border: 3px solid v.$color-gray-darker;
+		width: 44px;
+		height: 44px;
+		@include b.breakpoint(md) {
+			width: 56px;
+			height: 56px;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+		span {
+			width: 19px;
+			height: 19px;
+			font-size: 0.9rem;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			background-color: v.$color-gray-light;
+		}
+	}
+
+	&__championSpells {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2px;
+
+		img {
+			width: 20px;
+			height: 20px;
+			@include b.breakpoint(md) {
+				width: 27px;
+				height: 27px;
+			}
+		}
+	}
+
+	&__stats {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+
+		p {
+			font-size: 0.8rem;
+		}
+	}
+
+	&__items {
+		display: none;
+		grid-template-columns: repeat(4, 1fr);
+		align-items: center;
+		gap: 2px;
+		@include b.breakpoint(md) {
+			display: grid;
+		}
+
+		img {
+			width: 27px;
+			height: 27px;
+		}
+	}
+
+	&__players {
+		display: none;
+		gap: 1rem;
+		// @include b.breakpoint(lg) {
+		// 	display: flex;
+		// }
+    @media (min-width: 1200px) {
+      display: flex;
+    }
+	}
+
+	&__team {
+		div {
+			display: flex;
+			gap: 0.2rem;
+			align-items: center;
+		}
+
+		img {
+			width: 14px;
+			height: 14px;
+		}
+
+		a {
+			transition: v.$transition;
+			font-size: 0.8rem;
+			cursor: pointer;
+			letter-spacing: 0.4px;
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: v.$color-victory-light;
+			}
+		}
+	}
 }

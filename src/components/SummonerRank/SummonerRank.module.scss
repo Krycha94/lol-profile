@@ -1,0 +1,66 @@
+@use "../../styles/breakpoints" as b;
+@use "../../styles/variables" as v;
+
+.ranks {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	flex: 1;
+	@include b.breakpoint(lg) {
+		gap: 2rem;
+	}
+
+	&__card {
+		background-color: v.$color-gray-light;
+		width: 100%;
+		border-radius: 1rem;
+	}
+
+	&__header {
+		padding: 1rem;
+		display: flex;
+		justify-content: space-between;
+		border-bottom: solid 1px v.$color-bg;
+
+		p:first-child {
+			font-weight: bold;
+			font-size: 1.2rem;
+		}
+	}
+
+	&__content {
+		padding: 1rem;
+		display: flex;
+		justify-content: space-between;
+		font-size: 0.8rem;
+	}
+
+	&__division {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+
+		img {
+			width: 60px;
+			height: 60px;
+		}
+	}
+
+	&__points {
+		p:first-child {
+			font-weight: bold;
+			font-size: 1.2rem;
+		}
+	}
+
+	&__winrate {
+		display: flex;
+		align-items: center;
+		text-align: end;
+
+		p:first-child {
+			margin-bottom: 0.2rem;
+		}
+	}
+}

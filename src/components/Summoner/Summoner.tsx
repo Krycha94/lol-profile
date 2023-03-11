@@ -5,11 +5,11 @@ import styles from "./Summoner.module.scss";
 
 const Summoner = () => {
 	return (
-		<section>
+		<section className={styles.section}>
 			<SummonerDetails />
 
-			{/* md flex row */}
-			<div>
+			{/* lg flex row */}
+			<div className={styles.flex}>
 				<SummonerRank />
 				<SummonerStats />
 			</div>

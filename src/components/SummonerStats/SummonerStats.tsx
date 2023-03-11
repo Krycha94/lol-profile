@@ -1,16 +1,19 @@
+import Match from "../Match/Match";
 import styles from "./SummonerStats.module.scss";
 
 const SummonerStats = () => {
 	return (
-		<div>
-			<div>
+		<div className={styles.stats}>
+			<div className={styles.stats__header}>
 				<button>Matches</button>
 				<button>Mastery</button>
 			</div>
-			<div>
-				<p>matches</p>
-				<p>mastery</p>
-			</div>
+			<ul className={styles.stats__list}>
+				<Match />
+				<Match />
+				<Match />
+				<Match />
+			</ul>
 		</div>
 	);
 };

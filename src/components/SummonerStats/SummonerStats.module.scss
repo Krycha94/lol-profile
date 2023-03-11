@@ -1,0 +1,29 @@
+@use "../../styles/breakpoints" as b;
+@use "../../styles/variables" as v;
+
+.stats {
+	background-color: v.$color-gray-light;
+	border-radius: 1rem;
+	flex: 2;
+
+	&__header {
+		border-bottom: solid 1px v.$color-bg;
+
+		button {
+			background-color: transparent;
+			font: inherit;
+			color: inherit;
+			padding: 1rem;
+			transition: v.$transition;
+			&:hover,
+			&:active,
+			&:focus {
+				color: v.$color-victory-light;
+			}
+		}
+	}
+
+	&__list {
+		padding: 1rem;
+	}
+}

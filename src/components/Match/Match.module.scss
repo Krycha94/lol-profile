@@ -1,0 +1,16 @@
+@use "../../styles/variables" as v;
+@use "../../styles/breakpoints" as b;
+
+.match {
+	width: 100%;
+	background-color: v.$color-defeat-dark;
+	border: 2px solid v.$color-defeat-light;
+	border-radius: 1rem;
+  padding: 0.5rem;
+
+  //pozniej to usunac
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}

@@ -1,0 +1,61 @@
+@use "../../styles/variables" as v;
+@use "../../styles/breakpoints" as b;
+
+.summoner {
+	text-align: center;
+	margin-bottom: 5rem;
+
+	&__avatar {
+		position: relative;
+		margin: 0 auto;
+		width: 125px;
+		height: 125px;
+		margin-bottom: 1rem;
+		@include b.breakpoint(md) {
+			width: 150px;
+			height: 150px;
+		}
+
+		img {
+			width: 125px;
+			height: 125px;
+			@include b.breakpoint(md) {
+				width: 150px;
+				height: 150px;
+			}
+		}
+
+		span {
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: v.$color-gray-light;
+			padding: 0.2rem 0.8rem;
+			border-radius: 1rem;
+		}
+	}
+
+	h2 {
+		@include b.breakpoint(md) {
+			font-size: 2rem;
+		}
+	}
+
+	&__button {
+		margin-top: 1rem;
+		font-family: inherit;
+		background-color: v.$color-victory-light;
+		color: v.$color-font;
+		padding: 0.4rem 0.8rem;
+		border-radius: 0.4rem;
+		font-size: 1.2rem;
+		transition: v.$transition;
+
+		&:hover,
+		&:focus {
+			background-color: v.$color-font;
+			color: v.$color-bg;
+		}
+	}
+}

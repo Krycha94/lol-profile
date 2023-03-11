@@ -66,4 +66,8 @@ button {
 
 section {
 	@include m.container;
+	padding: 0 1rem;
+	@include b.breakpoint(xl) {
+		padding: 0;
+	}
 }

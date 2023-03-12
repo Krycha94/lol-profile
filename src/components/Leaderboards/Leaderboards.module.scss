@@ -1,0 +1,36 @@
+@use "../../styles/breakpoints" as b;
+@use "../../styles/variables" as v;
+
+.leaderboards {
+	padding: 5rem 2rem;
+	@include b.breakpoint(xl) {
+		padding: 5rem 0;
+	}
+
+	&__title {
+		text-align: center;
+		font-size: 2rem;
+	}
+
+	&__search {
+		margin: 5rem 0 3rem;
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__select {
+		text-transform: uppercase;
+		padding: 0.5rem;
+		border: none;
+		border-radius: 0.4rem;
+		background-color: v.$color-gray-light;
+		color: v.$color-font;
+		font-size: 1rem;
+	}
+
+	&__btnContainer {
+		margin-top: 3rem;
+	}
+}

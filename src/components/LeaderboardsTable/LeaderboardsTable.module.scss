@@ -1,0 +1,66 @@
+@use "../../styles/breakpoints" as b;
+@use "../../styles/variables" as v;
+
+.leaderboards {
+	font-size: 0.75rem;
+	width: 100%;
+	border-collapse: collapse;
+	background-color: v.$color-gray-darker;
+	@include b.breakpoint(md) {
+		font-size: 1rem;
+	}
+
+	img {
+		width: 16px;
+		height: 16px;
+		border-radius: 50%;
+		@include b.breakpoint(md) {
+			width: 30px;
+			height: 30px;
+		}
+		@include b.breakpoint(xl) {
+			width: 38px;
+			height: 38px;
+		}
+	}
+
+	&__head {
+		th:nth-child(2) {
+			width: auto;
+			text-align: left;
+		}
+	}
+
+	&__body:nth-child(2n) {
+		background-color: v.$color-gray-light;
+	}
+
+	&__summoner {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		@include b.breakpoint(xl) {
+			gap: 0.8rem;
+			font-size: 1.2rem;
+		}
+	}
+
+	&__winrate {
+		display: none;
+		@include b.breakpoint(md) {
+			display: inline;
+		}
+	}
+
+	th,
+	td {
+		padding: 0.5rem 0;
+		@include b.breakpoint(md) {
+			padding: 1rem 0;
+		}
+	}
+
+	tbody td {
+		text-align: center;
+	}
+}

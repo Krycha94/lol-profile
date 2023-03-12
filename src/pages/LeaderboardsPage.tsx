@@ -1,6 +1,10 @@
+import Leaderboards from "../components/Leaderboards/Leaderboards";
+
 const LeaderboardsPage = () => {
-  return (
-    <div>LeaderboardsPage</div>
-  )
-}
-export default LeaderboardsPage
+	return (
+		<main>
+			<Leaderboards />
+		</main>
+	);
+};
+export default LeaderboardsPage;

@@ -5,15 +5,12 @@ import styles from "./Summoner.module.scss";
 
 const Summoner = () => {
 	return (
-		<section className={styles.section}>
+		<section className={styles.summoner}>
 			<SummonerDetails />
-
-			{/* lg flex row */}
 			<div className={styles.flex}>
 				<SummonerRank />
 				<SummonerStats />
 			</div>
-      
 		</section>
 	);
 };

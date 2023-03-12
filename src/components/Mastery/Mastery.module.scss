@@ -26,7 +26,7 @@
 			width: 56px;
 			height: 56px;
 		}
-    @include b.breakpoint(lg) {
+		@include b.breakpoint(lg) {
 			width: 70px;
 			height: 70px;
 		}
@@ -34,13 +34,12 @@
 
 	h5 {
 		font-size: 1rem;
-    @include b.breakpoint(lg) {
+		@include b.breakpoint(lg) {
 			font-size: 1.4rem;
 		}
 	}
 
 	&__badge {
-		border: 3px solid v.$color-gray-darker;
 		width: 44px;
 		height: 44px;
 		@include b.breakpoint(md) {

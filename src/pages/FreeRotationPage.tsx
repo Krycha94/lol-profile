@@ -1,6 +1,10 @@
+import FreeRotation from "../components/FreeRotation/FreeRotation";
+
 const FreeRotationPage = () => {
-  return (
-    <div>FreeRotationPage</div>
-  )
-}
-export default FreeRotationPage
+	return (
+		<main>
+			<FreeRotation />
+		</main>
+	);
+};
+export default FreeRotationPage;

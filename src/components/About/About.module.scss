@@ -1,0 +1,50 @@
+@use "../../styles/breakpoints" as b;
+@use "../../styles/variables" as v;
+
+.about {
+	padding: 5rem 2rem;
+	@include b.breakpoint(xl) {
+		padding: 5rem 0;
+	}
+
+	&__title {
+		text-align: center;
+		font-size: 2rem;
+	}
+
+	&__desc {
+		margin: 5rem 0 3rem;
+		text-align: center;
+
+		p {
+			font-size: 1rem;
+			margin-bottom: 1rem;
+			@include b.breakpoint(md) {
+				font-size: 1.2rem;
+				margin-bottom: 1.2rem;
+			}
+			@include b.breakpoint(xl) {
+				font-size: 1.4rem;
+				margin-bottom: 2rem;
+			}
+		}
+
+		a {
+			color: v.$color-victory-light;
+		}
+	}
+
+	&__policies {
+		font-style: italic;
+		margin-top: 5rem;
+	}
+
+	&__footer {
+		width: 100%;
+		text-align: center;
+
+		a {
+			color: v.$color-victory-light;
+		}
+	}
+}

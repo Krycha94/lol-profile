@@ -9,6 +9,7 @@ type SummonerStatsProps = {
 };
 
 const SummonerStats = ({ masteries }: SummonerStatsProps) => {
+	const [activeTab, setActiveTab] = useState<"matches" | "mastery">("matches");
 	const [page, setPage] = useState(6);
 
 	const paginatedMasteries = masteries.slice(0, page);
@@ -16,20 +17,34 @@ const SummonerStats = ({ masteries }: SummonerStatsProps) => {
 	return (
 		<div className={styles.stats}>
 			<div className={styles.stats__header}>
-				<button>Matches</button>
-				<button>Mastery</button>
+				<button
+					onClick={() => setActiveTab("matches")}
+					className={`${activeTab === "matches" && styles.active}`}
+				>
+					Matches
+				</button>
+				<button
+					onClick={() => setActiveTab("mastery")}
+					className={`${activeTab === "mastery" && styles.active}`}
+				>
+					Mastery
+				</button>
 			</div>
-			{/* <ul className={styles.stats__match}>
-				<Match />
-				<Match />
-				<Match />
-				<Match />
-			</ul> */}
-			<ul className={styles.stats__mastery}>
-				{paginatedMasteries.map((mastery) => (
-					<Mastery key={mastery.championId} {...mastery} />
-				))}
-			</ul>
+			{activeTab === "matches" && (
+				<ul className={styles.stats__match}>
+					<Match />
+					<Match />
+					<Match />
+					<Match />
+				</ul>
+			)}
+			{activeTab === "mastery" && (
+				<ul className={styles.stats__mastery}>
+					{paginatedMasteries.map((mastery) => (
+						<Mastery key={mastery.championId} {...mastery} />
+					))}
+				</ul>
+			)}
 			<button
 				onClick={() => setPage((prev) => prev + 6)}
 				className={styles.stats__button}

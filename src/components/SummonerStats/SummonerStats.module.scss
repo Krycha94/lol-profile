@@ -8,16 +8,23 @@
 
 	&__header {
 		border-bottom: solid 1px v.$color-bg;
+		display: flex;
+		justify-content: space-evenly;
 
 		button {
 			background-color: transparent;
 			font: inherit;
+			font-weight: 600;
 			color: inherit;
 			padding: 1rem;
 			transition: v.$transition;
 			&:hover,
 			&:active,
 			&:focus {
+				color: v.$color-victory-light;
+			}
+
+			&.active {
 				color: v.$color-victory-light;
 			}
 		}

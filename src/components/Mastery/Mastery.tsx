@@ -9,6 +9,7 @@ const Mastery = ({
 	championPoints,
 }: SummonerMasteryType) => {
 	const champion = champions[championId];
+	// console.log(championId);
 
 	const badge =
 		championLevel === 7

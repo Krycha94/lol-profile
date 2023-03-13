@@ -30,7 +30,7 @@ const Summoner = () => {
 			setIsLoading(false);
 		} catch (error) {
 			setIsLoading(false);
-			navigate("/");
+			navigate("/error");
 		}
 	};
 

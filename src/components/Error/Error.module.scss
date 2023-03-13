@@ -1,0 +1,63 @@
+@use "../../styles/breakpoints" as b;
+@use "../../styles/variables" as v;
+
+.error {
+	padding: 5rem 2rem;
+	@include b.breakpoint(xl) {
+		padding: 5rem 0;
+	}
+
+	&__title {
+		text-align: center;
+		font-size: 2rem;
+	}
+
+	&__desc {
+		margin: 5rem 0 3rem;
+		text-align: center;
+	}
+
+	p {
+		font-size: 1rem;
+		margin-bottom: 1rem;
+		@include b.breakpoint(md) {
+			font-size: 1.2rem;
+			margin-bottom: 1.2rem;
+		}
+		@include b.breakpoint(xl) {
+			font-size: 1.4rem;
+			margin-bottom: 2rem;
+		}
+	}
+
+	img {
+		width: 200px;
+		margin: 0 auto;
+		@include b.breakpoint(md) {
+			width: 400px;
+		}
+	}
+
+	a {
+		font-family: inherit;
+		background-color: v.$color-victory-light;
+		color: v.$color-font;
+		padding: 0.6rem 1.2rem;
+		border-radius: 0.4rem;
+		font-size: 1.2rem;
+		transition: v.$transition;
+
+		&:hover,
+		&:focus {
+			background-color: v.$color-font;
+			color: v.$color-bg;
+		}
+
+		@include b.breakpoint(md) {
+			font-size: 1.4rem;
+		}
+		@include b.breakpoint(xl) {
+			font-size: 1.6rem;
+		}
+	}
+}

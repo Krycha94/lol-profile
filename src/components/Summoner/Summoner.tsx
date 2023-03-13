@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { getRankPoints, getSummoner } from "../../api/summonersApi";
+import {
+	getSummoner,
+	getRankPoints,
+	getMasteryPoints,
+} from "../../api/summonersApi";
 import SummonerDetails from "../SummonerDetails/SummonerDetails";
 import SummonerRank from "../SummonerRank/SummonerRank";
 import SummonerStats from "../SummonerStats/SummonerStats";
 import Spinner from "../Spinner/Spinner";
 import SummonerType from "../../types/SummonerType";
 import SummonerRankType from "../../types/SummonerRankType";
+import SummonerMasteryType from "../../types/SummonerMasteryType";
 import styles from "./Summoner.module.scss";
 
 const Summoner = () => {
@@ -21,6 +26,7 @@ const Summoner = () => {
 		summonerLevel: 0,
 	});
 	const [rankeds, setRankeds] = useState<SummonerRankType[]>([]);
+	const [masteries, setMasteries] = useState<SummonerMasteryType[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
 
 	const fetchSummoner = async () => {
@@ -30,8 +36,11 @@ const Summoner = () => {
 				await getSummoner(enteredRegion, enteredName);
 			setSummoner({ id, puuid, name, profileIconId, summonerLevel });
 
-			const ranks = await getRankPoints(enteredRegion, id);
-			setRankeds(ranks);
+			const rankedData = await getRankPoints(enteredRegion, id);
+			setRankeds(rankedData);
+
+			const masteryData = await getMasteryPoints(enteredRegion, id);
+			setMasteries(masteryData);
 
 			setIsLoading(false);
 		} catch (error) {
@@ -51,7 +60,7 @@ const Summoner = () => {
 			<SummonerDetails {...summoner} />
 			<div className={styles.flex}>
 				<SummonerRank rankeds={rankeds} />
-				<SummonerStats />
+				<SummonerStats masteries={masteries} />
 			</div>
 		</section>
 	);

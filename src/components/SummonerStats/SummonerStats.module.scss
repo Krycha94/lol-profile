@@ -39,4 +39,22 @@
 			padding: 2rem;
 		}
 	}
+
+	&__button {
+		display: block;
+		margin: 1rem auto;
+		font-family: inherit;
+		background-color: v.$color-victory-light;
+		color: v.$color-font;
+		padding: 0.4rem 0.8rem;
+		border-radius: 0.4rem;
+		font-size: 1.2rem;
+		transition: v.$transition;
+
+		&:hover,
+		&:focus {
+			background-color: v.$color-font;
+			color: v.$color-bg;
+		}
+	}
 }

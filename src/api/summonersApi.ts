@@ -15,3 +15,10 @@ export const getRankPoints = async (region: string, id: string) => {
 	);
 	return data;
 };
+
+export const getMasteryPoints = async (region: string, id: string) => {
+	const { data } = await axios.get(
+		`https://${region}.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/${id}?api_key=${apiKey}`
+	);
+	return data;
+};

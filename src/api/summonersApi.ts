@@ -8,3 +8,10 @@ export const getSummoner = async (region: string, name: string) => {
 	);
 	return data;
 };
+
+export const getRankPoints = async (region: string, id: string) => {
+	const { data } = await axios.get(
+		`https://${region}.api.riotgames.com/lol/league/v4/entries/by-summoner/${id}?api_key=${apiKey}`
+	);
+	return data;
+};

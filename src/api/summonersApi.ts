@@ -22,3 +22,21 @@ export const getMasteryPoints = async (region: string, id: string) => {
 	);
 	return data;
 };
+
+export const getAllMatches = async (
+	region: string,
+	puuid: string,
+	page = 8
+) => {
+	const { data } = await axios.get(
+		`https://${region}.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?start=0&count=${page}&api_key=${apiKey}`
+	);
+	return data;
+};
+
+export const getMatch = async (region: string, matchId: string) => {
+	const { data } = await axios.get(
+		`https://${region}.api.riotgames.com/lol/match/v5/matches/${matchId}?api_key=${apiKey}`
+	);
+	return data.info;
+};

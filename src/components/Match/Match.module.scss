@@ -3,14 +3,25 @@
 
 .match {
 	width: 100%;
-	background-color: v.$color-defeat-dark;
-	border: 2px solid v.$color-defeat-light;
+
 	border-radius: 1rem;
 	padding: 0.5rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 1rem;
+	transition: v.$transition;
+	&.defeat {
+		background-color: v.$color-defeat-dark;
+		border: 2px solid v.$color-defeat-light;
+	}
+	&.victory {
+		background-color: v.$color-victory-dark;
+		border: 2px solid v.$color-victory-light;
+	}
+	&:hover {
+		filter: brightness(120%);
+	}
 	@include b.breakpoint(lg) {
 		padding: 1rem;
 	}
@@ -38,7 +49,6 @@
 
 	&__championImage {
 		position: relative;
-		border: 3px solid v.$color-gray-darker;
 		width: 44px;
 		height: 44px;
 		@include b.breakpoint(md) {
@@ -51,13 +61,14 @@
 			height: 100%;
 		}
 		span {
+			text-align: center;
 			width: 19px;
 			height: 19px;
 			font-size: 0.9rem;
 			position: absolute;
 			bottom: 0;
 			left: 0;
-			background-color: v.$color-gray-light;
+			background-color: v.$color-gray-darker;
 		}
 	}
 
@@ -108,9 +119,9 @@
 		// @include b.breakpoint(lg) {
 		// 	display: flex;
 		// }
-    @media (min-width: 1200px) {
-      display: flex;
-    }
+		@media (min-width: 1200px) {
+			display: flex;
+		}
 	}
 
 	&__team {

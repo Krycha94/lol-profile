@@ -4,7 +4,10 @@ import {
 	getSummoner,
 	getRankPoints,
 	getMasteryPoints,
+	getAllMatches,
+	getMatch,
 } from "../../api/summonersApi";
+import { transformRegion } from "../../utils/helpers";
 import SummonerDetails from "../SummonerDetails/SummonerDetails";
 import SummonerRank from "../SummonerRank/SummonerRank";
 import SummonerStats from "../SummonerStats/SummonerStats";
@@ -12,6 +15,7 @@ import Spinner from "../Spinner/Spinner";
 import SummonerType from "../../types/SummonerType";
 import SummonerRankType from "../../types/SummonerRankType";
 import SummonerMasteryType from "../../types/SummonerMasteryType";
+import { SummonerMatchType } from "../../types/SummonerMatchType";
 import styles from "./Summoner.module.scss";
 
 const Summoner = () => {
@@ -27,6 +31,7 @@ const Summoner = () => {
 	});
 	const [rankeds, setRankeds] = useState<SummonerRankType[]>([]);
 	const [masteries, setMasteries] = useState<SummonerMasteryType[]>([]);
+	const [matches, setMatches] = useState<SummonerMatchType[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
 
 	const fetchSummoner = async () => {
@@ -41,6 +46,13 @@ const Summoner = () => {
 
 			const masteryData = await getMasteryPoints(enteredRegion, id);
 			setMasteries(masteryData);
+
+			const newRegion = transformRegion(enteredRegion);
+			const matchesId = await getAllMatches(newRegion, puuid);
+			const singleMatches = await Promise.all(
+				matchesId.map(async (match: string) => await getMatch(newRegion, match))
+			);
+			setMatches(singleMatches);
 
 			setIsLoading(false);
 		} catch (error) {
@@ -60,7 +72,11 @@ const Summoner = () => {
 			<SummonerDetails {...summoner} />
 			<div className={styles.flex}>
 				<SummonerRank rankeds={rankeds} />
-				<SummonerStats masteries={masteries} />
+				<SummonerStats
+					masteries={masteries}
+					matches={matches}
+					puuid={summoner.puuid}
+				/>
 			</div>
 		</section>
 	);

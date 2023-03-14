@@ -1,8 +1,5 @@
 import moment from "moment/moment";
-import { queueIdArray } from "./constants";
-
-export const calcWinrate = (wins: number, losses: number) =>
-	Math.round((wins / (wins + losses)) * 100);
+import { queueIdArray, profileIcons } from "./constants";
 
 export const transformRegion = (region: string) => {
 	switch (region) {
@@ -28,6 +25,9 @@ export const transformRegion = (region: string) => {
 	}
 };
 
+export const calcWinrate = (wins: number, losses: number) =>
+	Math.round((wins / (wins + losses)) * 100);
+
 export const getGameMode = (id: number) => {
 	const gameMode = queueIdArray.find((que) => que.queueId === id);
 	return gameMode?.description || "Normal Draft";
@@ -47,3 +47,9 @@ export const getKDA = (kills: number, deaths: number, assists: number) => {
 	}
 	return ((kills + assists) / deaths).toFixed(1) || 0;
 };
+
+export const getWinrate = (wins: number, losses: number) =>
+	((wins / (wins + losses)) * 100).toFixed(0) || 50;
+
+export const getProfileIcon = () =>
+	profileIcons[Math.floor(Math.random() * profileIcons.length)];

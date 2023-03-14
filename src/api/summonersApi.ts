@@ -40,3 +40,13 @@ export const getMatch = async (region: string, matchId: string) => {
 	);
 	return data.info;
 };
+
+export const getTopPlayers = async (
+	region: string,
+	queue = "RANKED_SOLO_5x5"
+) => {
+	const { data } = await axios.get(
+		`https://${region}.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/${queue}?api_key=${apiKey}`
+	);
+	return data.entries;
+};

@@ -43,13 +43,40 @@
 			gap: 0.8rem;
 			font-size: 1.2rem;
 		}
+		a {
+			transition: v.$transition;
+			&:hover,
+			&:focus {
+				color: v.$color-victory-light;
+			}
+		}
 	}
 
+	&__winrateContainer {
+		display: flex;
+		justify-content: center;
+		@include b.breakpoint(md) {
+			gap: 1rem;
+		}
+	}
 	&__winrate {
 		display: none;
+		width: 50%;
+		border-radius: 0.5rem;
+		overflow: hidden;
 		@include b.breakpoint(md) {
-			display: inline;
+			display: flex;
 		}
+	}
+	&__win {
+		background-color: v.$color-victory-light;
+		text-align: left;
+		padding-left: 0.6rem;
+	}
+	&__lose {
+		background-color: v.$color-defeat-light;
+		text-align: right;
+		padding-right: 0.6rem;
 	}
 
 	th,

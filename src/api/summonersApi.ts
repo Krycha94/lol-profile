@@ -50,3 +50,10 @@ export const getTopPlayers = async (
 	);
 	return data.entries;
 };
+
+export const getFreeChampions = async () => {
+	const { data } = await axios.get(
+		`https://euw1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=${apiKey}`
+	);
+	return data.freeChampionIds;
+};

@@ -20,7 +20,7 @@
 		border: 2px solid v.$color-victory-light;
 	}
 	&:hover {
-		filter: brightness(120%);
+		filter: brightness(130%);
 	}
 	@include b.breakpoint(lg) {
 		padding: 1rem;

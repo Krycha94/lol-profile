@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
 import styles from "./SummonerDetails.module.scss";
 
 type SummonerProps = {
@@ -13,12 +12,10 @@ const SummonerDetails = ({
 	profileIconId,
 	summonerLevel,
 }: SummonerProps) => {
-	const location = useLocation();
 	const [isCoppied, setIsCoppied] = useState(false);
 
 	const copyProfileLink = () => {
-		//TODO fix url when app is deployed
-		navigator.clipboard.writeText(`http://localhost:5173${location.pathname}`);
+		navigator.clipboard.writeText(document.location.href);
 		setIsCoppied(true);
 	};
 

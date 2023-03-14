@@ -50,7 +50,10 @@
 	&__points {
 		p:first-child {
 			font-weight: bold;
-			font-size: 1.2rem;
+			font-size: 1.1rem;
+		}
+		p:nth-child(2) {
+			opacity: 0.6;
 		}
 	}
 
@@ -58,6 +61,10 @@
 		display: flex;
 		align-items: center;
 		text-align: end;
+		opacity: 0.6;
+		@include b.breakpoint(lg) {
+			font-size: 0.9rem;
+		}
 
 		p:first-child {
 			margin-bottom: 0.2rem;

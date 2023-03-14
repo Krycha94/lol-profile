@@ -26,7 +26,7 @@ const SummonerRank = ({ rankeds }: SummonerRankProps) => {
 					<div className={styles.ranks__content}>
 						<div className={styles.ranks__division}>
 							<img
-								src={`/src/assets/${rankedSolo.tier}.png`}
+								src={`/src/assets/ranks/${rankedSolo.tier}.png`}
 								alt={`${rankedSolo.tier} badge`}
 							/>
 							<div className={styles.ranks__points}>
@@ -59,7 +59,7 @@ const SummonerRank = ({ rankeds }: SummonerRankProps) => {
 					<div className={styles.ranks__content}>
 						<div className={styles.ranks__division}>
 							<img
-								src={`/src/assets/${rankedFlex.tier}.png`}
+								src={`/src/assets/ranks/${rankedFlex.tier}.png`}
 								alt={`${rankedFlex.tier} badge`}
 							/>
 							<div className={styles.ranks__points}>

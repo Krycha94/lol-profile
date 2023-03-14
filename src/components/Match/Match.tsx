@@ -1,5 +1,4 @@
 import moment from "moment/moment";
-import { Link } from "react-router-dom";
 import { getGameMode, getTimePlayed, getKDA } from "../../utils/helpers";
 import { summonerSpell, runes } from "../../utils/constants";
 import {
@@ -111,9 +110,9 @@ const Match = ({
 								src={`http://ddragon.leagueoflegends.com/cdn/13.5.1/img/champion/${player.championName}.png`}
 								alt={`${player.championName}`}
 							/>
-							<Link to={`/summoner/${platformId}/${player.summonerName}`}>
+							<a href={`/summoner/${platformId}/${player.summonerName}`}>
 								{player.summonerName}
-							</Link>
+							</a>
 						</div>
 					))}
 				</div>
@@ -125,9 +124,9 @@ const Match = ({
 								src={`http://ddragon.leagueoflegends.com/cdn/13.5.1/img/champion/${player.championName}.png`}
 								alt={`${player.championName}`}
 							/>
-							<Link to={`/summoner/${platformId}/${player.summonerName}`}>
+							<a href={`/summoner/${platformId}/${player.summonerName}`}>
 								{player.summonerName}
-							</Link>
+							</a>
 						</div>
 					))}
 				</div>

@@ -1,5 +1,6 @@
 import moment from "moment/moment";
 import { queueIdArray, profileIcons } from "./constants";
+import LeaderboardsPlayerType from "../types/LeaderboardsPlayerType";
 
 export const transformRegion = (region: string) => {
 	switch (region) {
@@ -53,3 +54,14 @@ export const getWinrate = (wins: number, losses: number) =>
 
 export const getProfileIcon = () =>
 	profileIcons[Math.floor(Math.random() * profileIcons.length)];
+
+export const paginate = (array: LeaderboardsPlayerType[]) => {
+	const itemsPerPage = 20;
+	const pages = Math.ceil(array.length / itemsPerPage);
+	const paginatedArray = Array.from({ length: pages }, (_, index) => {
+		const start = index * itemsPerPage;
+		return array.slice(start, start + itemsPerPage);
+	});
+
+	return paginatedArray;
+};

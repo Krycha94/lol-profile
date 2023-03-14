@@ -32,5 +32,29 @@
 
 	&__btnContainer {
 		margin-top: 3rem;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1rem;
+
+		.leaderboards__btn {
+			background-color: transparent;
+			color: v.$color-font;
+			&:disabled {
+				opacity: 0.5;
+				cursor: not-allowed;
+			}
+		}
+
+		.pageBtn {
+			width: 2rem;
+			height: 2rem;
+			border-radius: 0.4rem;
+			background-color: v.$color-victory-light;
+			color: v.$color-font;
+			&.active {
+				background-color: v.$color-victory-dark;
+			}
+		}
 	}
 }

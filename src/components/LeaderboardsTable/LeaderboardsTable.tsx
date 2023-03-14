@@ -19,10 +19,10 @@ const LeaderboardsTable = ({ players, region }: LeaderboardsTableProps) => {
 					<th>Win Ratio</th>
 				</tr>
 			</thead>
-			{players.map((player, index) => (
+			{players.map((player) => (
 				<tbody key={player.summonerId} className={styles.leaderboards__body}>
 					<tr>
-						<td>{index + 1}</td>
+						<td>{player.rank}</td>
 						<td className={styles.leaderboards__summoner}>
 							<img
 								src={`http://ddragon.leagueoflegends.com/cdn/13.5.1/img/profileicon/${getProfileIcon()}.png`}

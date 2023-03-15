@@ -22,6 +22,7 @@ const SearchForm = () => {
 			<h2>Check your LoL Profile!</h2>
 			<form className={styles.section__form} onSubmit={handleSubmit}>
 				<div className={styles.section__control}>
+					<small>Test Summoner: "JohnnySlow"</small>
 					<input
 						type="text"
 						id="username"

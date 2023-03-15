@@ -12,6 +12,11 @@
 		margin: 3rem 0;
 	}
 
+	small {
+		display: block;
+		margin-bottom: 1rem;
+	}
+
 	input,
 	select {
 		padding: 0.8rem;
@@ -28,8 +33,10 @@
 
 	input {
 		margin-right: 0.7rem;
+		margin-bottom: 1rem;
 		@include b.breakpoint(md) {
 			margin-right: 1rem;
+			margin-bottom: 0;
 		}
 	}
 

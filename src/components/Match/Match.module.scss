@@ -3,7 +3,6 @@
 
 .match {
 	width: 100%;
-
 	border-radius: 1rem;
 	padding: 0.5rem;
 	display: flex;
@@ -11,6 +10,9 @@
 	align-items: center;
 	margin-bottom: 1rem;
 	transition: v.$transition;
+	& > * {
+		flex: 1;
+	}
 	&.defeat {
 		background-color: v.$color-defeat-dark;
 		border: 2px solid v.$color-defeat-light;
@@ -44,7 +46,11 @@
 	&__champion {
 		display: flex;
 		align-items: center;
-		gap: 0.8rem;
+		justify-content: center;
+		gap: 0.2rem;
+		@include b.breakpoint(lg) {
+			gap: 0.4rem;
+		}
 	}
 
 	&__championImage {
@@ -102,6 +108,7 @@
 		display: none;
 		grid-template-columns: repeat(4, 1fr);
 		align-items: center;
+
 		gap: 2px;
 		@include b.breakpoint(md) {
 			display: grid;
@@ -116,11 +123,14 @@
 	&__players {
 		display: none;
 		gap: 1rem;
+		flex: 2;
 		// @include b.breakpoint(lg) {
 		// 	display: flex;
 		// }
 		@media (min-width: 1200px) {
 			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 	}
 

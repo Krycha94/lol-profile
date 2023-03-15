@@ -111,7 +111,7 @@ const Match = ({
 								alt={`${player.championName}`}
 							/>
 							<a href={`/summoner/${platformId}/${player.summonerName}`}>
-								{player.summonerName}
+								{player.summonerName.slice(0, 9)}
 							</a>
 						</div>
 					))}
@@ -125,7 +125,7 @@ const Match = ({
 								alt={`${player.championName}`}
 							/>
 							<a href={`/summoner/${platformId}/${player.summonerName}`}>
-								{player.summonerName}
+								{player.summonerName.slice(0, 9)}
 							</a>
 						</div>
 					))}

@@ -35,7 +35,7 @@ export const regions = [
 	{ id: 11, value: "ru", text: "ru" },
 ];
 
-export const champions: any = {
+export const champions = {
 	"266": "Aatrox",
 	"103": "Ahri",
 	"84": "Akali",
@@ -515,7 +515,9 @@ export const queueIdArray = [
 	},
 ];
 
-export const summonerSpell: any = {
+export const summonerSpell: {
+	[key: string]: string;
+} = {
 	"21": "SummonerBarrier.png",
 	"1": "SummonerBoost.png",
 	"14": "SummonerDot.png",
@@ -534,7 +536,9 @@ export const summonerSpell: any = {
 	"55": "Summoner_UltBookSmitePlaceholder.png",
 };
 
-export const runes: any = {
+export const runes: {
+	[key: string]: string;
+} = {
 	"8100": "Styles/7200_Domination.png",
 	"8300": "Styles/7203_Whimsy.png",
 	"8000": "Styles/7201_Precision.png",

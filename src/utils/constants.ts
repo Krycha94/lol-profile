@@ -35,7 +35,9 @@ export const regions = [
 	{ id: 11, value: "ru", text: "ru" },
 ];
 
-export const champions = {
+export const champions: {
+	[key: string]: string;
+} = {
 	"266": "Aatrox",
 	"103": "Ahri",
 	"84": "Akali",

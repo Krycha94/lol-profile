@@ -1,68 +1,24 @@
 import { screen, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { matches, masteries } from "../../utils/dummyData";
 
 import SummonerStats from "./SummonerStats";
 
 describe("<SummonerStats />", () => {
-	const masteries = [{ championId: 0, championLevel: 0, championPoints: 0 }];
-	const matches = [
-		{
-			gameDuration: 0,
-			gameEndTimestamp: 0,
-			participants: [
-				{
-					assists: 0,
-					champLevel: 0,
-					championName: "",
-					deaths: 0,
-					item0: 0,
-					item1: 0,
-					item2: 0,
-					item3: 0,
-					item4: 0,
-					item5: 0,
-					item6: 0,
-					kills: 0,
-					neutralMinionsKilled: 0,
-					perks: {
-						styles: [
-							{
-								selections: [
-									{
-										perk: 0,
-									},
-								],
-							},
-							{
-								style: 0,
-							},
-						],
-					},
-					puuid: "",
-					summoner1Id: 0,
-					summoner2Id: 0,
-					summonerName: "",
-					totalMinionsKilled: 0,
-					win: true,
-				},
-			],
-			platformId: "",
-			queueId: 0,
-		},
-	];
+	const puuid =
+		"8aGmVGJa1gmhpHdX88OSjwAjRumY-AgV2RXDPVT2n62P4SK38vDHHeCctCu7fq_A1hcwA8hOqSwPVg";
 
-	it("renders match ONLY when matches button is clicked", async () => {
+	it("renders matches ONLY when matches button is clicked", async () => {
 		const user = userEvent.setup();
-		render(<SummonerStats masteries={masteries} matches={matches} puuid="" />);
+		render(
+			<SummonerStats masteries={masteries} matches={matches} puuid={puuid} />
+		);
 
 		const matchesBtn = screen.getByRole("button", { name: /matches/i });
 		await user.click(matchesBtn);
 
-		const matchHeader = screen.getByRole("heading", {
-			level: 3,
-			name: /normal draft/i,
-		});
-		expect(matchHeader).toBeInTheDocument();
+		const matchItems = screen.getAllByRole("listitem");
+		expect(matchItems).toHaveLength(matches.length);
 
 		const masteryHeader = screen.queryByRole("heading", { level: 5 });
 		expect(masteryHeader).toBeNull();
@@ -70,18 +26,20 @@ describe("<SummonerStats />", () => {
 
 	it("renders mastery ONLY when mastery button is clicked", async () => {
 		const user = userEvent.setup();
-		render(<SummonerStats masteries={masteries} matches={matches} puuid="" />);
+		render(
+			<SummonerStats masteries={masteries} matches={matches} puuid={puuid} />
+		);
 
 		const masteryBtn = screen.getByRole("button", { name: /mastery/i });
 		await user.click(masteryBtn);
+
+		const masteryItems = screen.getAllByRole("listitem");
+		expect(masteryItems).toHaveLength(masteries.length);
 
 		const matchHeader = screen.queryByRole("heading", {
 			level: 3,
 			name: /normal draft/i,
 		});
 		expect(matchHeader).toBeNull();
-
-		const masteryHeader = screen.getByRole("heading", { level: 5 });
-		expect(masteryHeader).toBeInTheDocument();
 	});
 });

@@ -50,7 +50,7 @@ export const getKDA = (kills: number, deaths: number, assists: number) => {
 };
 
 export const getWinrate = (wins: number, losses: number) =>
-	((wins / (wins + losses)) * 100).toFixed(0) || 50;
+	+((wins / (wins + losses)) * 100).toFixed(0) || 50;
 
 export const getProfileIcon = () =>
 	profileIcons[Math.floor(Math.random() * profileIcons.length)];

@@ -125,3 +125,7 @@ export const leaderboardsMock = [
 		rank: 3,
 	},
 ];
+
+export const freeRotationIds = [
+	2, 14, 19, 33, 54, 58, 61, 96, 101, 117, 127, 142, 150, 221, 235, 421,
+];

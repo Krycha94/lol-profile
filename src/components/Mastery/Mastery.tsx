@@ -26,7 +26,7 @@ const Mastery = ({
 			? m2
 			: championLevel === 1
 			? m1
-			: "";
+			: m5;
 
 	return (
 		<li className={styles.mastery}>

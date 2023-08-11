@@ -40,6 +40,10 @@
 		}
 	}
 
+	input::placeholder {
+		font-size: 0.9rem;
+	}
+
 	select {
 		text-transform: uppercase;
 		padding: 0.95rem;

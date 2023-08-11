@@ -10,7 +10,7 @@ LoL Profile is API project from my favourite game which fetches and displays the
 
 I created this website with ReactJS, Typescript and SASS. I used React Router for SPA and axios to fetch data. The application is also tested with Vitest and React Testing Library.
 
-If you dont play League of Legends you can type random nick to check result, example: "JohnnySlow".
+If you dont play League of Legends you can type random name to check result, example: "Denited".
 
 You can:
 

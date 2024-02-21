@@ -44,11 +44,13 @@ const Summoner = () => {
 			const rankedData = await getRankPoints(enteredRegion, id);
 			setRankeds(rankedData);
 
-			const masteryData = await getMasteryPoints(enteredRegion, id);
+			const masteryData = await getMasteryPoints(enteredRegion, puuid);
 			setMasteries(masteryData);
 
 			const newRegion = transformRegion(enteredRegion);
+
 			const matchesId = await getAllMatches(newRegion, puuid);
+
 			const singleMatches = await Promise.all(
 				matchesId.map(async (match: string) => await getMatch(newRegion, match))
 			);

@@ -26,7 +26,7 @@ const SearchForm = () => {
 						type="text"
 						id="username"
 						name="username"
-						placeholder="test name - Denited"
+						placeholder="Enter you summoner name"
 						value={enteredText}
 						onChange={(e) => setEnteredText(e.target.value)}
 					/>
